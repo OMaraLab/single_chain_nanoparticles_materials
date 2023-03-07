@@ -1,0 +1,47 @@
+
+
+[ atomtypes ]
+;name  at.num   mass      charge  ptype       c6           c12
+AcnMe    6      0.000      0.000     A  9.491654e-03       1.68584e-05
+ AcnC    6      0.000      0.000     A  1.765738e-03       0.222702e-05
+ AcnN    7      0.000      0.000     A  1.475272e-03       0.155459e-05
+
+[ nonbond_params ]
+;	i	j	func	c6	      c12
+; special case types
+AcnMe   HS14    1    0          0
+ AcnC   HS14    1    0          0
+ AcnN   HS14    1    0          0
+AcnMe      H    1    0          0
+ AcnC      H    1    0          0
+ AcnN      H    1    0          0
+
+[ pairtypes ]
+;	i	j	func	c6	      c12
+; special case types
+AcnMe      H    1    0          0
+ AcnC      H    1    0          0
+ AcnN      H    1    0          0
+
+[ moleculetype ]
+; Name            nrexcl
+ACN  3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB
+     1      AcnMe      1    ACN     C1      1    0.287       15.035
+     2       AcnC      1    ACN     C2      2    0.1376      12.011
+     3       AcnN      1    ACN     N1      3   -0.4246      14.007
+
+[ constraints ]
+;  ai    aj funct  r 
+    1     2     1  0.146
+    2     3     1  0.117
+
+
+[ angles ]
+;  ai    aj    ak funct  theta        cth
+;   1     2     3     2  180          401243.9      ; converted to linear potential below
+    1     2     3     9  0.44486692   3.525e5       ; following  https://doi.org/10.1063/5.0015184, * 0.01 as raw constant is too high
+
+
